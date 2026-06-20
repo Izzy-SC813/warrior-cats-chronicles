@@ -1,0 +1,122 @@
+/* Sets the dark forest background, text font, and page spacing */
+body { 
+    background-color: #1a1a1a; 
+    color: #f0f0f0; 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+    text-align: center; 
+    margin: 0; 
+    padding: 20px; 
+}
+
+/* Wraps the entire game in a sleek, centered box with a shadow */
+.container { 
+    max-width: 800px; 
+    margin: auto; 
+    background: #2a2a2a; 
+    padding: 20px; 
+    border-radius: 12px; 
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5); 
+}
+
+/* Hides screens that aren't active so the player only sees one menu at a time */
+.screen { display: none; }
+.active { display: block; }
+
+/* Draws the cat's square body and handles transitions when colors change */
+.preview-box { 
+    width: 180px; 
+    height: 180px; 
+    margin: 20px auto; 
+    border-radius: 15px; 
+    border: 5px solid #444; 
+    position: relative; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+}
+
+/* Positions the eye layer perfectly inside the cat body */
+.cat-eyes { 
+    display: flex; 
+    justify-content: space-around; 
+    width: 60%; 
+    position: absolute; 
+    top: 40px; 
+}
+
+/* Draws the individual circular cat eyes */
+.cat-eye { 
+    width: 25px; 
+    height: 25px; 
+    border-radius: 50%; 
+    border: 2px solid #1a1a1a; 
+}
+
+/* Sets up a transparent overlay layer for fur patterns */
+.cat-stripes { 
+    position: absolute; 
+    width: 100%; 
+    height: 100%; 
+    top: 0; 
+    left: 0; 
+    border-radius: 10px; 
+    opacity: 0.4; 
+    pointer-events: none; 
+}
+
+/* Mathematical formulas to draw stripes over the cat's fur */
+.stripe-pattern-1 { background: repeating-linear-gradient(45deg, transparent, transparent 10px, #000 10px, #000 20px); }
+.stripe-pattern-2 { background: repeating-linear-gradient(-45deg, transparent, transparent 15px, #fff 15px, #fff 30px); }
+.stripe-none { background: transparent; }
+
+/* Arranges layout elements into an organized 3-column layout grid */
+.grid-3 { 
+    display: grid; 
+    grid-template-columns: 1fr 1fr 1fr; 
+    gap: 10px; 
+    margin: 15px 0; 
+}
+
+/* Generates cleanly formatted status background panels */
+.stat-bar { 
+    background: #444; 
+    border-radius: 8px; 
+    padding: 10px; 
+    font-weight: bold; 
+}
+
+/* Designs custom buttons that slightly grow when hovered over */
+button { 
+    background: #27ae60; 
+    color: white; 
+    border: none; 
+    padding: 12px 18px; 
+    font-size: 15px; 
+    margin: 5px; 
+    cursor: pointer; 
+    border-radius: 6px; 
+    font-weight: bold; 
+    transition: 0.2s; 
+}
+button:hover { 
+    opacity: 0.9; 
+    transform: scale(1.02); 
+}
+
+/* Specific colored variants for action buttons and danger buttons */
+button.action-btn { background: #2980b9; }
+button.danger-btn { background: #c0392b; }
+
+/* Styles the scrolling terminal log at the bottom of the screen */
+.log-box { 
+    background: #111; 
+    border-left: 5px solid #e67e22; 
+    padding: 15px; 
+    text-align: left; 
+    height: 120px; 
+    overflow-y: auto; 
+    border-radius: 6px; 
+    font-family: monospace; 
+    margin: 15px 0; 
+}
